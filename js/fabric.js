@@ -27,30 +27,31 @@ function addWord(word) {
     top: word.y * imageHeight,
     word: word,
     strokeWidth: 1,
+    opacity: .1,
+    transparentCorners: false,
     stroke: '#aa0000',
   });
   canvas.add(text);
+  text.on('moving', function (evt) {
+    console.log(evt.target);
+  });
 }
 
 fabric.Image.fromURL('images/grave.jpeg', function(img) {
 
+
   canvas.add(img.set({
     left: 0,
     top: 0,
+    mode: 'multiply',
     hasControls: false,
     selectable: false,
     lockMovementX: true,
     lockMovementY: true,
-    backgroundColor: 'blue',
-    opacity: 0.4,
+    backgroundColor: '#fdfdfd',
     width: imageWidth,
     height: imageHeight,
-  }).scale(1));
-
-  img.on('select', function(evt) {
-    console.log('Moving');
-    alert(evt.target);
-  });
+  }));
 
   words.forEach(function(word, index){
     addWord(word);
