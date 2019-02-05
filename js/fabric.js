@@ -1,4 +1,4 @@
-var imageWidth = window.innerWidth;
+var imageWidth = window.innerWidth/2;
 var imageHeight = window.innerHeight;
 
 var words = [
@@ -33,7 +33,14 @@ function addWord(word) {
     transparentCorners: false,
     stroke: '#aa0000',
   }).scale(word.scale);
+
   canvas.add(text);
+  var wordListContainer = document.getElementById('word-list');
+  var wordNode = document.createElement('li');
+  wordNode.className = 'list-group-item';
+  wordNode.innerHTML = word.text;
+  wordListContainer.appendChild(wordNode);
+
   text.on('moving', function (evt) {
     console.log([evt.target.top/imageHeight,
     evt.target.left/imageWidth,

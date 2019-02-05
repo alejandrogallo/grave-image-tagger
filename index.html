@@ -3,14 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title></title>
   </head>
   <body>
 
-    <button onclick="addNewWord()"> + </button>
-    <canvas width="800" height="800" id="container"></canvas>
+    <div class="container row">
+      <div class="col-xs-12 col-sm-6"> 
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+          </button>
+          <strong>Hi there!</strong>
+          Move the words where they belong. You can scale them and rotate them.
+        </div>
+        <button class="btn btn-success" onclick="addNewWord()">
+          Add new Word
+        </button>
+
+        <p>Words</p>
+        <ul class="list-group" id="word-list">
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6"> 
+        <canvas width="800" height="800" id="container"></canvas>
+      </div>
+    </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.6/fabric.min.js" charset="utf-8"></script>
     <script src="js/fabric.js" charset="utf-8"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
   </body>
 </html>
